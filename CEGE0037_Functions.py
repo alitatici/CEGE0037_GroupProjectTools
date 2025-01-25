@@ -118,7 +118,7 @@ def restoration_time_calculation(row, days_for_recovery_vulnerability, loss_rati
 
     for index, vulnerability_string in enumerate(vulnerability_strings):
         if vulnerability_string == vulnStrFL_row:
-            if Loss_Ratio < loss_ratio_limit:
+            if Loss_Ratio <= loss_ratio_limit:
                 recovery_time = 0
             else:
                 LR00 = days_for_recovery_vulnerability.loc[index, "Loss Ratio = 0.0"]
