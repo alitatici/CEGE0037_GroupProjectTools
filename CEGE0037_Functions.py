@@ -3,13 +3,19 @@ import pandas as pd
 import scipy.io
 import scipy.spatial
 from scipy.interpolate import interp1d
+import requests
 
-def vulnerability_funtions(vulnerability_models_list):
+def vulnerability_funtions():
     """
     This is the definition of the vulnerability_funtions function, which takes a single argument
     vulnerability_models - the name of an Excel file that contains the data to be processed.
     """
-    # read the excel file and extract data from the first sheet
+    # URL of the raw Excel file on GitHub, download the file from GitHub, save the content of the file locally
+    file_url = 'https://github.com/alitatici/CEGE0037_GroupProjectTools/blob/main/vulnerabilityInventory_TV0_updated.xlsx'
+    response = requests.get(file_url)
+    with open('uploaded_file.xlsx', 'wb') as file:
+        file.write(response.content)
+    vulnerability_models_list = 'uploaded_file.xlsx'
     df = pd.read_excel(vulnerability_models_list, sheet_name=1)
 
     # initialize an empty dictionary to store the results
