@@ -261,7 +261,8 @@ with col4:
 
     st.write(
         "Note: To complete the analysis for Goal 2, download the table and perform the calculations using Excel, Python, or MATLAB.")
-st.write("---")
 
 st.write('You can find the repo [here](https://github.com/alitatici/CEGE0037_GroupProjectTools).')
+st.write("---")
+
 
