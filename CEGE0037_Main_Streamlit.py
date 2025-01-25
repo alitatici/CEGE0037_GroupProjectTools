@@ -149,7 +149,7 @@ with col3:
     # start = st.number_input(label="Start day for resilience curve instances (days)", min_value=0, max_value=10000, value=0, step=1)
     # end = st.number_input(label="End day for resilience curve instances (days)", min_value=0, max_value=10000, value=0, step=1)
     # num_intervals = st.number_input(label="Number of instances", min_value=3, max_value=1000, value=3, step=1)
-    permeation_rate_mm_day = st.number_input(label="Permeation Rate (mm/day)", min_value=0, max_value=10000, value=1, step=1)
+    permeation_rate_mm_day = st.number_input(label="Permeation Rate (mm/day)", min_value=1, max_value=10000, value=1, step=1)
     permeation_rate = permeation_rate_mm_day / 1000
     st.text(f"Permeation Rate: {permeation_rate:.3f} meters/day")
     st.write("---")
