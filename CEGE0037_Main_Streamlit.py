@@ -19,16 +19,11 @@ with col1:
     # Add a file uploader to the webpage
     st.write("You need to add a building dataset with a column named 'water_height'. The building dataset is provided in the geodatabase file, and the water height information should be extracted from the flood raster file.")
     uploaded_file_of_buildings = st.file_uploader("Choose the Excel file of list of buildings with 'water_height'.", type=["xlsx"])
-    # uploaded_file_vulnerability_models = st.file_uploader("Choose the Excel file of vulnerability model", type=["xlsx"])
 
     if uploaded_file_of_buildings is not None:
         st.write("Filename of list of buildings:", uploaded_file_of_buildings.name)
-    # if uploaded_file_vulnerability_models is not None:
-    #     st.write("Filename of vulnerability model:", uploaded_file_vulnerability_models.name)
 
-    vulnerability_models_list = 'Core Materials/vulnerabilityInventory_TV0_updated.xlsx'
-
-    flood_damage_dict = vulnerability_funtions(vulnerability_models_list)
+    flood_damage_dict = vulnerability_funtions()
 
     st.write("---")
     st.write("**The vulnerability curve table and graph are provided only for visualization.**")
