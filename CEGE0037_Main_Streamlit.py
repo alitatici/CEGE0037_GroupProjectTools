@@ -217,7 +217,7 @@ with col3:
     df = pd.DataFrame(data)
 
     st.write("**Restoration time for building typologies of Tomorrowville**")
-    st.write("Here, you are expected to enter the number of days required for restoration based on building types corresponding to loss ratios. You can assign days to loss ratios below the threshold you set; however, the restoration time calculation will only apply to values above the limit.")
+    st.write("Here, you are expected to enter the number of days required for restoration based on building types corresponding to loss ratios. You can assign days to loss ratios below the threshold you set; however, the restoration time calculation will only apply to values above the threshold.")
     st.write("Please edit the table below as needed and click 'Save & Run' to submit.")
 
     # Display the table editor
