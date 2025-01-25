@@ -263,6 +263,5 @@ with col4:
         "Note: To complete the analysis for Goal 2, download the table and perform the calculations using Excel, Python, or MATLAB.")
 st.write("---")
 
-# Run the app with `streamlit run CEGE0037_Main_Streamlit.py`
-# streamlit run CEGE0037_Main_Streamlit.py
+st.write('You can find the repo [here](https://github.com/alitatici/CEGE0037_GroupProjectTools).')
 
