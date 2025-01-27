@@ -235,6 +235,8 @@ with tab2:
         # Convert back to dictionary on save
         if flag_save == 1:
             st.success("Restoration time for building typologies has been saved!")
+            
+            st.write("Restoration time corresponding to the specified loss ratios input by the user for different building typologies:")
             st.dataframe(days_for_recovery_vulnerability, height=400, use_container_width=True)  # Display the updated DataFrame
 
             # Display the Buildings DataFrame
