@@ -67,7 +67,7 @@ with tab1:
     with col2:
         st.header("Output")
         st.write("---")
-        st.write("Loss ratio of Tomorrowville buildings following flood damage:")
+        st.write("Loss ratio of Tomorrowville buildings following flood damage, calculated based on their corresponding vulnerability curves.")
 
         # Handle the Buildings file and calculate the damage levels
         if uploaded_file_of_buildings is not None:
@@ -86,7 +86,7 @@ with tab1:
             except Exception as e:
                 st.error(f"Error processing buildings file: {e}")
 
-        st.write("Note: To complete the analysis for Goal 1, download the table and perform the calculations using Excel, Python, or MATLAB.")
+        st.write("Note: To complete the analysis for the first goal of the assessment, download the table and perform the calculations using Excel, Python, or MATLAB.")
 
     st.write("---")
 
@@ -138,7 +138,7 @@ with tab2:
         st.text(f"Permeation Rate: {permeation_rate:.3f} meters/day")
         st.write("---")
 
-        loss_ratio_limit = st.number_input(label="Loss ratio threshold that you assume for occupiability of buildings.", min_value=0.00, max_value=1.00, value=0.00, step=0.01)
+        loss_ratio_limit = st.number_input(label="Provide the minimum loss ratio that would render a building unoccupiable.", min_value=0.00, max_value=1.00, value=0.00, step=0.01)
         st.write("---")
         # intervals = np.linspace(start, end, num_intervals, endpoint=True)
         # time_list = list(intervals)
@@ -201,7 +201,8 @@ with tab2:
         df = pd.DataFrame(data)
 
         st.write("**Restoration time for building typologies of Tomorrowville**")
-        st.write("Here, you are expected to enter the number of days required for restoration based on building types corresponding to loss ratios. You can assign days to loss ratios below the threshold you set; however, the restoration time calculation will only apply to values above the limit.")
+        st.write("Please enter the number of days required to fully restore (and therefore occupy) different building typologies for different loss ratios that a flood might cause.")
+        st.write("Note that you should only enter non-zero numbers for loss ratios above the occupiability threshold you set previously (i.e., it is assumed that buildings experiencing loss ratios below the threshold set can be restored while being occupied).")
         st.write("Please edit the table below as needed and click 'Save & Run' to submit.")
 
         # Display the table editor
@@ -245,7 +246,7 @@ with tab2:
             st.dataframe(buildings_df, height=400, use_container_width=True)
 
         st.write(
-            "Note: To complete the analysis for Goal 2, download the table and perform the calculations using Excel, Python, or MATLAB.")
+            "Note: To complete the analysis for the second goal of the assessment, download the table and perform the calculations using Excel, Python, or MATLAB.")
     st.write("---")
 
 # Run the app with `streamlit run CEGE0037_Main_Streamlit.py`
