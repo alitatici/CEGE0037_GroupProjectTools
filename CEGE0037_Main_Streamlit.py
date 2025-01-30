@@ -6,7 +6,7 @@ from CEGE0037_Functions import *
 # Streamlit App
 st.set_page_config(layout="wide")  # Set layout to wide
 st.title('CEGE0037: Reliability, Risk and Resilience Engineering 24/25')
-st.title('Group Project Tools')
+st.title('Group Coursework Project Tools')
 st.write("---")
 tab1, tab2 = st.tabs(["Tool 1", "Tool 2"])
 
@@ -21,7 +21,7 @@ with tab1:
         st.write("---")
 
         # Add a file uploader to the webpage
-        st.write("You need to add a building dataset with a column named 'water_height'. The building dataset is provided in the geodatabase file, and the water height information should be extracted from the flood raster file.")
+        st.write("You need to add a building dataset with a column named 'water_height'. The building dataset is provided in the geodatabase, and the water height information should be extracted from the flood raster file.")
         uploaded_file_of_buildings = st.file_uploader("Choose the Excel file of list of buildings with 'water_height'.", type=["xlsx"], key="file_uploader_tab1")
 
         if uploaded_file_of_buildings is not None:
@@ -35,7 +35,7 @@ with tab1:
         st.write("**The vulnerability curve table and graph are provided only for visualization.**")
 
         # Create a dropdown menu for dictionary keys
-        selected_key = st.selectbox("Select a flood vulnerability", options=list(flood_damage_dict.keys()))
+        selected_key = st.selectbox("Select a building typology to display its corresponding flood vulnerability curve and accompanying data.", options=list(flood_damage_dict.keys()))
 
         # Get the selected data
         selected_data = flood_damage_dict[selected_key]
@@ -102,7 +102,7 @@ with tab2:
 
         # Add a file uploader to the webpage
         st.write(
-            "You need to add a building dataset with a column named 'water_height'. The building dataset is provided in the geodatabase file, and the water height information should be extracted from the flood raster file.")
+            "You need to add a building dataset with a column named 'water_height'. The building dataset is provided in the geodatabase, and the water height information should be extracted from the flood raster file.")
         uploaded_file_of_buildings_2 = st.file_uploader("Choose the Excel file of list of buildings with 'water_height'.",
                                                       type=["xlsx"], key="file_uploader_tab2")
 
@@ -128,8 +128,8 @@ with tab2:
                 st.error(f"Error processing buildings file: {e}")
 
 
-        st.write("The requested value here represents the permeation rate of water levels in buildings.")
-        st.write("This permeation rate will be used specifically at building locations.")
+        st.write("The requested value here represents the permeation rate of flood water levels at buildings.")
+        st.write("This permeation rate will be used to determine how long it takes flood waters to recede at buildings.")
         # start = st.number_input(label="Start day for resilience curve instances (days)", min_value=0, max_value=10000, value=0, step=1)
         # end = st.number_input(label="End day for resilience curve instances (days)", min_value=0, max_value=10000, value=0, step=1)
         # num_intervals = st.number_input(label="Number of instances", min_value=3, max_value=1000, value=3, step=1)
