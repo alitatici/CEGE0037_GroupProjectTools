@@ -12,7 +12,7 @@ tab1, tab2 = st.tabs(["Tool 1", "Tool 2"])
 
 with tab1:
     st.title("Tool 1")
-    st.write("You can use this tool for goal 1.")
+    st.write("You can use this tool for the first goal of the assessment.")
     # Create two columns for layout: one for Inputs and one for Analyses
     col1, col2 = st.columns([1,1])
 
@@ -92,7 +92,7 @@ with tab1:
 
 with tab2:
     st.title("Tool 2")
-    st.write("You can use this tool for goal 2.")
+    st.write("You can use this tool for the second goal of the assessment.")
 
     # Create two columns for layout: one for Inputs and one for Analyses
     col3, col4 = st.columns([1,1])
